@@ -1,37 +1,37 @@
 import React, { Component } from "react";
 import "./App.css";
-import CounterComp from "./components/CounterComp";
-import FormComp from "./components/FormComp";
+import TaskList from "./components/TaskList";
 
 export default class App extends Component {
   state = {
-    isVisible: false,
-    count: 0,
-  };
-
-  inc = () => {
-    this.setState({ count: this.state.count + 1 });
-  };
-
-  dec = () => {
-    if (this.state.count > 0) {
-      this.setState({ count: this.state.count - 1 });
-    }
-  };
-
-  handleShow = () => {
-    this.setState({ isVisible: !this.state.isVisible });
+    tasks: [
+      {
+        id: Math.random(),
+        action: "Learn HTML",
+        isDone: true,
+      },
+      {
+        id: Math.random(),
+        action: "Learn CSS",
+        isDone: true,
+      },
+      {
+        id: Math.random(),
+        action: "Learn PROPS",
+        isDone: true,
+      },
+      {
+        id: Math.random(),
+        action: "Learn STATE",
+        isDone: false,
+      },
+    ],
   };
   render() {
     return (
       <div className="App">
-        <button onClick={() => this.handleShow()}>
-          {this.state.isVisible ? "Hide" : "Show"}
-        </button>
-        {this.state.isVisible ? (
-          <CounterComp count={this.state.count} inc={this.inc} dec={this.dec} />
-        ) : null}
-        <FormComp />
+        {/* AddTask.jsx */}
+        <TaskList tasks={this.state.tasks} />
       </div>
     );
   }
