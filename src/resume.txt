@@ -1,0 +1,16 @@
+Props :
+Pass data from parent to child () : Static Data
+Can't be modified.
+Read only 
+
+State : Can be used only in a class based component.
+        component are two types : - rafce : functional based component (< 2019 you can't use states in this type)
+                                  - rcc : react class component
+State : Dynamic object
+
+state = {
+    playersData : []
+}
+
+setState(playersData : newData) : is to modify the state content
+
